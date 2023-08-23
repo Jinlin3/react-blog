@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import BlogList from './BlogList';
 
 const Home = () => {
   const [blogs, setBlogs] = useState([
@@ -8,12 +9,7 @@ const Home = () => {
   ]);
   return (
     <div className="home">
-      {blogs.map((blog) => (
-        <div className="blog-preview" key={blog.id}>
-          <h2>{ blog.title }</h2>
-          <p>Written by { blog.author }</p>
-        </div>
-      ))}
+      <BlogList blogs={blogs} title="All Blogs!" />
     </div>
   );
 }
@@ -23,4 +19,7 @@ export default Home;
 // Use an anonymous function to invoke functions with parameters
 
 // .map cycles through arrays
+
 // key property should be used when creating lists in React to distinugish them from each other
+
+// props allow for the passing of data from a parent component to a child component
