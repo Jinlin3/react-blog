@@ -1,0 +1,16 @@
+{
+  "blogs": [
+    {
+      "title": "My First Blog",
+      "body": "Bananarama is an iconic Smosh phrase! Do you guys agree?",
+      "author": "mario",
+      "id": 1
+    },
+    {
+      "title": "Opening Party!",
+      "body": "No I think Molester Moon is more iconic!",
+      "author": "yoshi",
+      "id": 1
+    }
+  ]
+}
