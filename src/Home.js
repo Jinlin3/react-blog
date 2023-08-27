@@ -8,6 +8,8 @@ const Home = () => {
     { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'mario', id: 3 }
   ]);
 
+  const [name, setName] = useState('mario');
+
   const handleDelete = (id) => {
     const newBlogs = blogs.filter((blog) => blog.id !== id);
     setBlogs(newBlogs);
@@ -15,12 +17,14 @@ const Home = () => {
 
   useEffect(() => {
     console.log('use effect ran');
-    console.log(blogs);
-  });
+    console.log(name);
+  }, [name]);
 
   return (
     <div className="home">
       <BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete} />
+      <button onClick={() => setName('Luigi')}>Change Name</button>
+      <p>{ name }</p>
     </div>
   );
 }
@@ -40,3 +44,6 @@ export default Home;
 // (hook) useState re-renders the DOM when the state changes
 
 // (hook) useEffect allows for a function to run every render of the DOM
+// second argument for useEffect => dependency array
+// put values you want useEffect to watch for change in the dependency array
+// an empty dependency array allows useEffect to only run the function once
